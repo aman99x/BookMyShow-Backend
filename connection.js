@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", true);
@@ -6,15 +7,17 @@ mongoose.set("strictQuery", true);
 const mongoURI = process.env.MONGODB_URI;
 
 const connectToMongo = async () => {
-  try {
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
+  mongoose
+    .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+      //  give  a message when connection is successfull
+      console.log("connection established with mongodb server online");
+    })
+    .catch((err) => {
+      // give  error message, error occurs during the connection
+      console.log("error while connection", err);
     });
-    console.log("Connection established with MongoDB server online");
-  } catch (err) {
-    console.error("Error while connecting to MongoDB:", err);
-  }
 };
 
 exports.connection = connectToMongo;
+
