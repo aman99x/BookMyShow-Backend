@@ -8,10 +8,10 @@ The Book Your Show backend is built using Express.js and MongoDB to store and re
 - Mongoose: Mongoose is used to establish the connection with MongoDB and perform database operations.
 
 # Endpoints
-- GET - https://bookmyshow-twrz.onrender.com/api/booking
+- GET - https://bookmyshow-backend-7wzv.onrender.com/api/booking
   - This endpoint retrieves booking information from the MongoDB database.
 
-- POST - https://bookmyshow-twrz.onrender.com/api/booking
+- POST - https://bookmyshow-backend-7wzv.onrender.com/api/booking
   - This endpoint is used to send booking information to the MongoDB database.
 
 # Installation and Setup Instructions
